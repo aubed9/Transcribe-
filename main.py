@@ -139,6 +139,7 @@ with gr.Blocks() as demo:
             fn=transcribe,
             inputs=url,
             outputs=[srt_file, video_file_output, mp3_file],
+            concurrency_limit=4
         )
 
 demo.launch(debug=True)
